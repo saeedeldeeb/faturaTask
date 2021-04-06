@@ -1,7 +1,7 @@
 const ProductProviders = (sequelize, Sequelize) => {
     return sequelize.define('product_providers', {
         product_id: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             allowNull: false,
             references: {
                 model: 'Product',
@@ -9,7 +9,7 @@ const ProductProviders = (sequelize, Sequelize) => {
             }
         },
         provider_id: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             allowNull: false,
             references: {
                 model: 'Provider',

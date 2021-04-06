@@ -1,7 +1,7 @@
 const Product = (sequelize, Sequelize) => {
     const products = sequelize.define('products', {
         id: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },

@@ -7,10 +7,12 @@ import ProductProviders from './product_providers';
 
 
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
-    host: HOST,
+    host: dbConfig.HOST,
     dialect: dbConfig.dialect,
     operatorsAliases: false,
-
+    define: {
+        timestamps: false
+    },
     pool: {
         max: dbConfig.pool.max,
         min: dbConfig.pool.min,
@@ -32,7 +34,6 @@ db.ProductProviders = ProductProviders(sequelize, Sequelize);
 db.Category.associate(db);
 db.Product.associate(db);
 db.Provider.associate(db);
-db.ProductProviders.associate(db);
 
 
 export default db;
