@@ -4,16 +4,17 @@
  * Module dependencies.
  */
 
-import app, { set } from '../app';
-var debug = require('debug')('faturatask:server');
+import app from '../app';
+import Debug from 'debug';
+const debug = Debug('faturatask:server');
 import { createServer } from 'http';
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
-set('port', port);
+var port = normalizePort(process.env.PORT || '3002');
+app.set('port', port);
 
 /**
  * Create HTTP server.

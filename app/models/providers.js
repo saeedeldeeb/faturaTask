@@ -1,7 +1,7 @@
 const Provider = (sequelize, Sequelize) => {
     const providers = sequelize.define('providers', {
         id: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
@@ -12,7 +12,7 @@ const Provider = (sequelize, Sequelize) => {
     })
 
     providers.associate = (models) => {
-        providers.belongsToMany(models.Groups, {
+        providers.belongsToMany(models.ProductProviders, {
             through: 'ProductProviders',
             as: 'products',
             foreignKey: 'provider_id'

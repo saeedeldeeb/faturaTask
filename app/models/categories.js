@@ -1,7 +1,7 @@
 const Category = (sequelize, Sequelize) => {
     const categories = sequelize.define('categories', {
         id: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
@@ -20,7 +20,7 @@ const Category = (sequelize, Sequelize) => {
     })
 
     categories.associate = (models) => {
-        products.belongsTo(models.Category, { foreignKey: 'parent_id' });
+        categories.belongsTo(models.Category, { foreignKey: 'parent_id' });
     };
 
     return categories;
