@@ -46,3 +46,12 @@ UPDATE NO ACTION,
 DELETE NO ACTION ON
 UPDATE NO ACTION
 ) ENGINE = InnoDB;
+
+
+INSERT INTO `categories` VALUES (1,'cat1',NULL),(2,'cat2',1),(3,'cat3',1);
+
+INSERT INTO `product_providers` VALUES (1,1,50,0),(1,2,5,1),(2,1,40,0),(2,2,10,1);
+
+INSERT INTO `products` VALUES (1,'prod1','',1),(2,'prod2',NULL,1);
+
+INSERT INTO `providers` VALUES (1,'prov1'),(2,'prov2'),(3,'prov3');
